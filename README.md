@@ -25,15 +25,15 @@ Refrensi:
 ### Solution Approach
 1. Content-Based Filtering
 
-  - Sistem akan mencocokkan produk berdasarkan atribut seperti kategori, warna, ukuran, dan merek.
-  - Contoh: Jika pengguna menyukai "Dress, Yellow, XL", sistem akan menyarankan dress kuning berukuran XL dari merek serupa.
-  - Cara kerja: Produk diubah menjadi vektor (data numerik), lalu dihitung kemiripannya menggunakan cosine similarity (mengukur seberapa mirip dua produk).
+   - Sistem akan mencocokkan produk berdasarkan atribut seperti kategori, warna, ukuran, dan merek.
+   - Contoh: Jika pengguna menyukai "Dress, Yellow, XL", sistem akan menyarankan dress kuning berukuran XL dari merek serupa.
+   - Cara kerja: Produk diubah menjadi vektor (data numerik), lalu dihitung kemiripannya menggunakan cosine similarity (mengukur seberapa mirip dua produk).
 
 2. Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
 
-  - Sistem belajar dari rating pengguna untuk memprediksi produk yang mungkin mereka sukai.
-  - Contoh: Jika pengguna memberi rating tinggi pada "T-shirt Adidas", sistem akan menyarankan T-shirt lain yang disukai pengguna serupa.
-  - Cara kerja: Menggunakan jaringan saraf untuk memahami pola preferensi pengguna dan produk, bahkan untuk produk yang belum pernah mereka lihat.
+   - Sistem belajar dari rating pengguna untuk memprediksi produk yang mungkin mereka sukai.
+   - Contoh: Jika pengguna memberi rating tinggi pada "T-shirt Adidas", sistem akan menyarankan T-shirt lain yang disukai pengguna serupa.
+   - Cara kerja: Menggunakan jaringan saraf untuk memahami pola preferensi pengguna dan produk, bahkan untuk produk yang belum pernah mereka lihat.
   
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
