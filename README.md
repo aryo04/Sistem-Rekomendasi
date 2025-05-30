@@ -13,12 +13,12 @@ Refrensi:
 ## Business Understanding
 
 ### Problem Statements
-- Bagaimana cara membantu pengguna menemukan produk fashion yang sesuai berdasarkan nama produk, kategori, brand, warna, dan ukuran?
+- Bagaimana cara membantu pengguna menemukan produk fashion yang sesuai berdasarkan product id yang mewakili nama produk, kategori, brand, warna, dan ukuran?
 
 - Bagaimana cara merekomendasikan produk yang relevan berdasarkan interaksi pengguna sebelumnya seperti rating?
 
 ### Goals
-- Membangun sistem rekomendasi berdasarkan nama produk, kategori, brand, warna, dan ukuran yang serupa dengan atribut tersebut.
+- Membangun sistem rekomendasi berdasarkan product id yang mewakili nama produk, kategori, brand, warna, dan ukuran yang serupa dengan atribut-atribut tersebut.
 
 - Membangun sistem rekomendasi yang dapat memberikan produk sesuai dengan selera pengguna berdasarkan rating pengguna sebelumnya.
 
