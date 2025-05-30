@@ -1,14 +1,14 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Aryo Daffa Khairuddin
 
 ## Project Overview
 
-Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
+Banyak orang sering kesulitan dalam menemukan fashion yang sesuai dengan preferensi mereka dengan banyaknya pilihan yang tersedia. Sistem rekomendasi menjadi salah satu solusinya karena dapat memberikan pengalaman belanja yang lebih personal, efisien, dan relevan. Dengan adanya sistem ini, pengguna dapat memperoleh saran produk yang sesuai tanpa harus menelusuri seluruh katalog secara manual, sehingga mempermudah dalam pencarian dan meningkatkan kepuasan pelanggan. Berdasarka penelitian oleh El-Demerdash et al. (2023) menjelaskan bahwa sistem rekomendasi dalam e-commerce fashion secara signifikan memengaruhi keputusan pembelian konsumen melalui pemanfaatan preferensi pribadi, tren terkini, serta data sosial pengguna.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-- Format Referensi dapat mengacu pada penulisan sitasi [IEEE](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf), [APA](https://www.mendeley.com/guides/apa-citation-guide/) atau secara umum seperti [di sini](https://penerbitdeepublish.com/menulis-buku-membuat-sitasi-dengan-mudah/)
-- Sumber yang bisa digunakan [Scholar](https://scholar.google.com/)
+Selain memanfaatkan riwayat interaksi pengguna, pendekatan modern dalam sistem rekomendasi juga mengintegrasikan analisis visual menggunakan teknologi kecerdasan buatan. Berdasarka penelitian oleh Chang et al. (2025) mengembangkan sistem rekomendasi berbasis Convolutional Neural Networks (CNN) yang mampu mengenali ciri visual dari produk fashion seperti warna, bentuk, dan gaya. Dengan pendekatan ini, rekomendasi menjadi lebih akurat bahkan ketika data interaksi pengguna masih terbatas. Oleh karena itu, pengembangan sistem rekomendasi berbasis AI menjadi strategi penting untuk meningkatkan daya saing dan retensi pengguna di sektor e-commerce fashion.
+
+Refrensi:
+- El-Demerdash, D., El-Sheikh, K., & Abou-Ghali, M. (2023). Fashion Recommendation System and its Impact on Consumers’ Purchase Decision Making. International Design Journal, 13(1), 195–206. [link](https://www.researchgate.net/publication/366780313_Fashion_Recommendation_System_and_its_Impact_on_Consumers'_Purchase_Decision_Making)
+- Chang, C.-C., Wei, C.-H., Wang, Y.-H., Yang, C.-H. T., & Hsiao, S. (2025). Recommender System for Apparel Products Based on Image Recognition Using Convolutional Neural Networks. Engineering Proceedings, 89(1), 38. [link](https://www.mdpi.com/2673-4591/89/1/38)
 
 ## Business Understanding
 
