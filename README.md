@@ -23,17 +23,15 @@ Refrensi:
 - Membangun sistem rekomendasi yang dapat memberikan produk sesuai dengan selera pengguna berdasarkan rating pengguna sebelumnya.
 
 ### Solution Approach
-1. Content-Based Filtering
+- Content-Based Filtering
+  Sistem akan merekomendasikan produk berdasarkan kesamaan atribut seperti nama produk, kategori, brand, warna, dan ukuran. Misalnya, jika pengguna menyukai produk 
+  "Dress, Men's Fashion, Adidas, Yellow, XL", sistem akan mencari produk serupa berdasarkan atribut yang sama. Proses ini menggunakan teknik cosine similarity 
+  untuk mengukur kemiripan antar produk.
 
-   - Sistem akan mencocokkan produk berdasarkan atribut seperti nama produk, kategori, brand, warna, dan ukuran.
-   - Contoh: Jika pengguna menyukai "Dress, Men`s Fashion ,Adidas, Yellow, XL", sistem akan menyarankan yang serupa.
-   - Cara kerja: Produk diubah menjadi vektor (data numerik), lalu dihitung kemiripannya menggunakan cosine similarity.
-
-2. Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
-
-   - Sistem belajar dari rating pengguna untuk memprediksi produk yang mungkin mereka sukai.
-   - Contoh: Jika pengguna memberi rating tinggi pada "T-shirt, Adidas", sistem akan menyarankan T-shirt lain yang disukai pengguna serupa.
-   - Cara kerja: Menggunakan jaringan saraf untuk memahami pola preferensi pengguna dan produk, bahkan untuk produk yang belum pernah mereka lihat.
+- Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
+  Sistem ini belajar dari rating pengguna untuk memprediksi produk yang mungkin disukai. Jika pengguna memberi rating tinggi pada produk seperti "T-shirt, Adidas", 
+  sistem akan menyarankan produk serupa berdasarkan pola preferensi yang dipelajari menggunakan jaringan saraf, bahkan untuk produk yang belum dilihat pengguna 
+  sebelumnya.
   
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
