@@ -15,7 +15,7 @@ Refrensi:
 ### Problem Statements
 - Bagaimana cara membantu pengguna menemukan produk fashion yang sesuai dengan preferensi kategori, warna, dan ukuran mereka?
 
-- Bagaimana sistem dapat merekomendasikan produk yang relevan berdasarkan interaksi pengguna sebelumnya seperti penilaian (rating)?
+- Bagaimana sistem dapat merekomendasikan produk yang relevan berdasarkan interaksi pengguna sebelumnya seperti rating?
 
 ### Goals
 - Mengembangkan sistem rekomendasi berbasis atribut produk (kategori, warna, ukuran, brand) untuk meningkatkan relevansi dan efisiensi pencarian.
