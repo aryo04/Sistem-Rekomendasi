@@ -12,32 +12,27 @@ Refrensi:
 
 ## Business Understanding
 
-Pada bagian ini, Anda perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
-
 ### Problem Statements
+- Bagaimana cara membantu pengguna menemukan produk fashion yang sesuai dengan preferensi kategori, warna, dan ukuran mereka?
 
-Menjelaskan pernyataan masalah:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+- Bagaimana sistem dapat merekomendasikan produk yang relevan berdasarkan interaksi pengguna sebelumnya seperti penilaian (rating)?
 
 ### Goals
+- Mengembangkan sistem rekomendasi berbasis atribut produk (kategori, warna, ukuran, brand) untuk meningkatkan relevansi dan efisiensi pencarian.
 
-Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
+- Membangun sistem rekomendasi yang mampu mempelajari pola preferensi pengguna berdasarkan data rating untuk memberikan rekomendasi yang bersifat personal.
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
+### Solution Approach
+- Content-Based Filtering
+  Sistem ini memanfaatkan informasi atribut dari produk seperti kategori, warna, ukuran, dan brand. Setiap produk akan direpresentasikan sebagai vektor berdasarkan atribut-atribut tersebut. Untuk menentukan 
+  seberapa mirip dua produk, digunakan metode cosine similarity, yaitu pengukuran kesamaan antara dua vektor berdasarkan sudut (cosinus) di antara mereka. Nilai cosine similarity yang lebih tinggi menunjukkan 
+  bahwa dua produk memiliki karakteristik yang lebih mirip, dan produk-produk dengan tingkat kemiripan tertinggi akan direkomendasikan kepada pengguna.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Approach” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
-
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
-
+- Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
+  NCF adalah pendekatan berbasis deep learning yang secara langsung mempelajari representasi laten pengguna dan produk melalui jaringan saraf. Model ini dilatih menggunakan data interaksi (rating) dan mampu 
+  menangkap hubungan non-linear antara pengguna dan produk. Dengan memanfaatkan NCF, sistem dapat memprediksi kemungkinan ketertarikan pengguna terhadap produk tertentu, bahkan jika mereka belum pernah 
+  berinteraksi dengan produk tersebut sebelumnya.
+  
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
