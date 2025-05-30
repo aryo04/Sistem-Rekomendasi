@@ -13,26 +13,26 @@ Refrensi:
 ## Business Understanding
 
 ### Problem Statements
-- Bagaimana cara membantu pengguna menemukan produk fashion yang sesuai dengan preferensi kategori, warna, dan ukuran mereka?
+- Bagaimana cara membantu pengguna menemukan produk fashion yang sesuai berdasarkan nama produk, kategori, brand, warna, dan ukuran?
 
 - Bagaimana cara merekomendasikan produk yang relevan berdasarkan interaksi pengguna sebelumnya seperti rating?
 
 ### Goals
-- Membangun sistem rekomendasi berdasarkan kategori, warna, ukuran, dan merek dengan cepat.
+- Membangun sistem rekomendasi berdasarkan nama produk, kategori, brand, warna, dan ukuran yang serupa dengan atribut tersebut.
 
 - Membangun sistem rekomendasi yang dapat memberikan produk sesuai dengan selera pengguna berdasarkan rating pengguna sebelumnya.
 
 ### Solution Approach
 1. Content-Based Filtering
 
-   - Sistem akan mencocokkan produk berdasarkan atribut seperti kategori, warna, ukuran, dan merek.
-   - Contoh: Jika pengguna menyukai "Dress, Yellow, XL", sistem akan menyarankan dress kuning berukuran XL dari merek serupa.
-   - Cara kerja: Produk diubah menjadi vektor (data numerik), lalu dihitung kemiripannya menggunakan cosine similarity (mengukur seberapa mirip dua produk).
+   - Sistem akan mencocokkan produk berdasarkan atribut seperti nama produk, kategori, brand, warna, dan ukuran.
+   - Contoh: Jika pengguna menyukai "Dress, Men`s Fashion ,Adidas, Yellow, XL", sistem akan menyarankan yang serupa.
+   - Cara kerja: Produk diubah menjadi vektor (data numerik), lalu dihitung kemiripannya menggunakan cosine similarity.
 
 2. Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
 
    - Sistem belajar dari rating pengguna untuk memprediksi produk yang mungkin mereka sukai.
-   - Contoh: Jika pengguna memberi rating tinggi pada "T-shirt Adidas", sistem akan menyarankan T-shirt lain yang disukai pengguna serupa.
+   - Contoh: Jika pengguna memberi rating tinggi pada "T-shirt, Adidas", sistem akan menyarankan T-shirt lain yang disukai pengguna serupa.
    - Cara kerja: Menggunakan jaringan saraf untuk memahami pola preferensi pengguna dan produk, bahkan untuk produk yang belum pernah mereka lihat.
   
 ## Data Understanding
