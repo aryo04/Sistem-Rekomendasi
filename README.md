@@ -24,11 +24,13 @@ Refrensi:
 
 ### Solution Approach
 - Content-Based Filtering
+
   Sistem akan merekomendasikan produk berdasarkan kesamaan atribut seperti nama produk, kategori, brand, warna, dan ukuran. Misalnya, jika pengguna menyukai produk 
   "Dress, Men's Fashion, Adidas, Yellow, XL", sistem akan mencari produk serupa berdasarkan atribut yang sama. Proses ini menggunakan teknik cosine similarity 
   untuk mengukur kemiripan antar produk.
 
 - Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
+  
   Sistem ini belajar dari rating pengguna untuk memprediksi produk yang mungkin disukai. Jika pengguna memberi rating tinggi pada produk seperti "T-shirt, Adidas", 
   sistem akan menyarankan produk serupa berdasarkan pola preferensi yang dipelajari menggunakan jaringan saraf, bahkan untuk produk yang belum dilihat pengguna 
   sebelumnya.
