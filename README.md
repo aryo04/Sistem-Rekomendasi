@@ -15,26 +15,25 @@ Refrensi:
 ### Problem Statements
 - Bagaimana cara membantu pengguna menemukan produk fashion yang sesuai dengan preferensi kategori, warna, dan ukuran mereka?
 
-- Bagaimana sistem dapat merekomendasikan produk yang relevan berdasarkan interaksi pengguna sebelumnya seperti rating?
+- Bagaimana cara merekomendasikan produk yang relevan berdasarkan interaksi pengguna sebelumnya seperti rating?
 
 ### Goals
-- Mengembangkan sistem rekomendasi berbasis atribut produk (kategori, warna, ukuran, brand) untuk meningkatkan relevansi dan efisiensi pencarian.
+- Membangun sistem rekomendasi berdasarkan kategori, warna, ukuran, dan merek dengan cepat.
 
-- Membangun sistem rekomendasi yang mampu mempelajari pola preferensi pengguna berdasarkan data rating untuk memberikan rekomendasi secara personal.
+- Membangun sistem rekomendasi yang dapat memberikan produk sesuai dengan selera pengguna berdasarkan rating pengguna sebelumnya.
 
 ### Solution Approach
 - Content-Based Filtering
 
-  Sistem ini memanfaatkan informasi atribut dari produk seperti kategori, warna, ukuran, dan brand. Setiap produk akan direpresentasikan sebagai vektor berdasarkan 
-  atribut-atribut tersebut. Untuk menentukan seberapa mirip dua produk, digunakan metode cosine similarity, yaitu pengukuran kesamaan antara dua vektor berdasarkan 
-  sudut (cosinus) di antara mereka. Nilai cosine similarity yang lebih tinggi menunjukkan bahwa dua produk memiliki karakteristik yang lebih mirip, dan produk- 
-  produk dengan tingkat kemiripan tertinggi akan direkomendasikan kepada pengguna.
+  - Sistem akan mencocokkan produk berdasarkan atribut seperti kategori, warna, ukuran, dan merek.
+  - Contoh: Jika pengguna menyukai "Dress, Yellow, XL", sistem akan menyarankan dress kuning berukuran XL dari merek serupa.
+  - Cara kerja: Produk diubah menjadi vektor (data numerik), lalu dihitung kemiripannya menggunakan cosine similarity (mengukur seberapa mirip dua produk).
 
 - Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
 
-  NCF adalah pendekatan berbasis deep learning yang secara langsung mempelajari representasi laten pengguna dan produk melalui jaringan saraf. Model ini dilatih 
-  menggunakan data interaksi (rating) dan mampu menangkap hubungan non-linear antara pengguna dan produk. Dengan memanfaatkan NCF, sistem dapat memprediksi 
-  kemungkinan ketertarikan pengguna terhadap produk tertentu, bahkan jika mereka belum pernah berinteraksi dengan produk tersebut sebelumnya.
+  - Sistem belajar dari rating pengguna untuk memprediksi produk yang mungkin mereka sukai.
+  - Contoh: Jika pengguna memberi rating tinggi pada "T-shirt Adidas", sistem akan menyarankan T-shirt lain yang disukai pengguna serupa.
+  - Cara kerja: Menggunakan jaringan saraf untuk memahami pola preferensi pengguna dan produk, bahkan untuk produk yang belum pernah mereka lihat.
   
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
