@@ -23,13 +23,13 @@ Refrensi:
 - Membangun sistem rekomendasi yang dapat memberikan produk sesuai dengan selera pengguna berdasarkan rating pengguna sebelumnya.
 
 ### Solution Approach
-- Content-Based Filtering
+1. Content-Based Filtering
 
   - Sistem akan mencocokkan produk berdasarkan atribut seperti kategori, warna, ukuran, dan merek.
   - Contoh: Jika pengguna menyukai "Dress, Yellow, XL", sistem akan menyarankan dress kuning berukuran XL dari merek serupa.
   - Cara kerja: Produk diubah menjadi vektor (data numerik), lalu dihitung kemiripannya menggunakan cosine similarity (mengukur seberapa mirip dua produk).
 
-- Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
+2. Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
 
   - Sistem belajar dari rating pengguna untuk memprediksi produk yang mungkin mereka sukai.
   - Contoh: Jika pengguna memberi rating tinggi pada "T-shirt Adidas", sistem akan menyarankan T-shirt lain yang disukai pengguna serupa.
