@@ -33,7 +33,7 @@ Refrensi:
 
    - Menggunakan atribut produk seperti Product Name, Brand, Category, Color, dan Size untuk membangun profil produk.
 
-   - Menggunakan teknik seperti TF-IDF (untuk teks) dan One-Hot Encoding (untuk kategori) untuk mengubah produk menjadi representasi vektor.
+   - Menggunakan teknik One-Hot Encoding  untuk mengubah produk menjadi representasi vektor.
 
    - Menggunakan cosine similarity untuk menemukan produk serupa dan memberikan rekomendasi.
 
