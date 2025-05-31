@@ -13,27 +13,31 @@ Refrensi:
 ## Business Understanding
 
 ### Problem Statements
-- Bagaimana cara membantu pengguna menemukan produk fashion yang sesuai berdasarkan product id yang mewakili nama produk, kategori, brand, warna, dan ukuran?
+   1. Bagaimana distribusi Rating produk berdasarkan Category dalam dataset ini?
 
-- Bagaimana cara merekomendasikan produk yang relevan berdasarkan interaksi pengguna sebelumnya seperti rating?
+   2. Bagaimana cara memberikan rekomendasi produk fashion yang relevan berdasarkan atribut produk seperti Brand, Category, Color, dan Size?
 
 ### Goals
-- Membangun sistem rekomendasi berdasarkan product id yang mewakili nama produk, kategori, brand, warna, dan ukuran yang serupa dengan atribut-atribut tersebut.
+   1. Mengetahui kategori fashion mana yang mendapatkan Rating tertinggi dari pengguna.
 
-- Membangun sistem rekomendasi yang dapat memberikan produk sesuai dengan selera pengguna berdasarkan rating pengguna sebelumnya.
+   2. Membangun sistem rekomendasi berbasis konten (Content-Based Filtering) yang menyarankan produk serupa berdasarkan fitur-fitur produk dalam dataset.
 
 ### Solution Approach
-- Content-Based Filtering
+1. Visualization
 
-  Sistem akan merekomendasikan produk berdasarkan kesamaan atribut seperti nama produk, kategori, brand, warna, dan ukuran yang sudah diwakilkan oleh Product id. 
-  Misalnya, jika pengguna menyukai produk Product id 1 mewakili atribut seperti "Dress, Men's Fashion, Adidas, Yellow, XL", sistem akan mencari produk serupa 
-  berdasarkan atribut yang sama. Proses ini menggunakan teknik cosine similarity untuk mengukur kemiripan antar produk.
+   - Mengeksplorasi Category dan Rating untuk mengidentifikasi preferensi pengguna terhadap jenis fashion tertentu.
 
-- Collaborative Filtering dengan Neural Collaborative Filtering (NCF)
-  
-  Sistem ini belajar dari rating pengguna untuk memprediksi produk yang mungkin disukai. Jika pengguna memberi rating tinggi pada produk seperti "T-shirt, Adidas", 
-  sistem akan menyarankan produk serupa berdasarkan pola preferensi yang dipelajari menggunakan jaringan saraf, bahkan untuk produk yang belum dilihat pengguna 
-  sebelumnya.
+   - Menggunakan visualisasi seperti bar chart dan boxplot untuk menunjukkan distribusi rating per kategori.
+
+2. Content-Based Filtering (CBF)
+
+   - Menggunakan atribut produk seperti Product Name, Brand, Category, Color, dan Size untuk membangun profil produk.
+
+   - Menggunakan teknik seperti TF-IDF (untuk teks) dan One-Hot Encoding (untuk kategori) untuk mengubah produk menjadi representasi vektor.
+
+   - Menggunakan cosine similarity untuk menemukan produk serupa dan memberikan rekomendasi.
+
+
   
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
