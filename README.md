@@ -157,11 +157,73 @@ Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan 
 - Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
 
 ## Modeling
-Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
+Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Based Filtering dan menggunakan dua algoritma , yaitu Cosine Similarity dan Euclidean Distance. Kedua algoritma ini menggunakan representasi vektor hasil encoding atribut produk sebagai dasar perhitungan kemiripan antar item.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
+### Solusi 1: Cosine Similarity
+- Perhitungan Cosine Similarity:
+
+   Cosine Similarity menghitung kesamaan antara dua vektor berdasarkan sudut di antara keduanya. Vektor dibentuk dari atribut produk yang telah diubah menjadi 
+   representasi numerik melalui encoding.
+   
+   Rumus perhitungan Cosine Similarity antara dua vektor A dan B:
+   
+   ![Rumus perhitungan Cosine Similarity](https://github.com/user-attachments/assets/d57245ae-ce75-4e86-9c10-5b36faffec3a)
+   
+   Nilai cosine similarity berkisar antara 0 hingga 1. Semakin mendekati 1, semakin mirip dua vektor tersebut.
+
+ - Fungsi Rekomendasi
+   Langkah-langkah:
+   
+   1. Mengencode data input menggunakan encoder yang sama.
+   
+   2. Menghitung nilai cosine similarity antara input dan seluruh data.
+   
+   3. Mengurutkan skor dari yang tertinggi.
+   
+   4. Mengambil Top-N produk paling mirip sebagai hasil rekomendasi. 
+
+### Solusi 2: Euclidean Distance
+- Perhitungan Euclidean Distance
+  Euclidean Distance menghitung jarak antar dua vektor dalam ruang berdimensi banyak:
+  
+  ![image](https://github.com/user-attachments/assets/1b63fdb4-559d-43de-aa96-2bcacbb10e98)
+
+  Agar dapat digunakan sebagai skor kesamaan (semakin tinggi berarti semakin mirip), maka dilakukan transformasi:
+
+  ![image](https://github.com/user-attachments/assets/515d8385-01bf-4f36-bf90-8f844aa5ec72)
+
+  Nilai similarity akan semakin besar jika jarak semakin kecil, dan sebaliknya.
+
+- Fungsi Rekomendasi
+  Langkah-langkah fungsi:
+   
+  1. Melakukan encoding terhadap atribut input.
+   
+  2. Menghitung jarak Euclidean antara input dengan semua produk dalam dataset.
+   
+  3. Mengubah hasil jarak menjadi skor similarity.
+   
+  4. Mengurutkan hasil berdasarkan skor tertinggi.
+   
+  5. Mengambil Top-N produk sebagai hasil rekomendasi.
+
+### Kelebihan dan Kekurangan
+
+| Pendekatan         | Kelebihan                                                         | Kekurangan                                                         |
+| ------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Cosine Similarity  | - Tidak terpengaruh oleh panjang vektor (skala)                   | - Tidak mempertimbangkan jarak absolut antar fitur                 |
+|                    | - Cocok untuk data yang sparse (banyak nol)                       | - Hanya fokus pada arah atau pola kemunculan atribut               |
+| Euclidean Distance | - Lebih intuitif secara geometris (jarak langsung antar titik)    | - Sensitif terhadap fitur dominan jika data tidak dinormalisasi    |
+|                    | - Cocok jika semua fitur dianggap memiliki kontribusi yang setara | - Bisa memberikan skor rendah meski atribut sebenarnya hampir sama |
+
+### Contoh Output Top-5 Recommendation   
+- Rekomendasi dengan Cosine Similarity
+  
+![image](https://github.com/user-attachments/assets/0c7ae6db-e575-41da-bec5-af75a40fca23)
+
+- Rekomendasi dengan Euclidean Distance
+
+![image](https://github.com/user-attachments/assets/cf83070a-2b2e-4e07-8980-cfcf8b50185f)
 
 ## Evaluation
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
