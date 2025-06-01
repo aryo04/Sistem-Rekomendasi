@@ -127,7 +127,7 @@ Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Produ
 - Rating tersebar dari 1 hingga 5, dengan puncak pada rating 3 dan rating 1 dan 5 juga cukup tinggi, menunjukkan pengalaman pengguna yang beragam baik sangat puas maupun sangat tidak puas.
 
 ## Data Preparation
-Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan pengangan rating dengan nilai 0, pengangan missing value, menghapus data duplikat, dan menangani outlier, sehingga hanya perlu melakukan tahap sebagai berikut:
+Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan penanganan rating dengan nilai 0, penanganan missing value, menghapus data duplikat, dan menangani outlier, sehingga hanya perlu melakukan tahap sebagai berikut:
 
 1. **Seleksi Fitur**
    ```
