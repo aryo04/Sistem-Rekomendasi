@@ -168,7 +168,7 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
 
  - **Fungsi Rekomendasi**
    
-   Langkah-langkah:
+   Langkah-langkah fungsi:
    
    - Mengencode data input menggunakan encoder yang sama.
    
