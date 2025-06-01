@@ -134,7 +134,7 @@ Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan 
    features = ['Product Name', 'Brand', 'Category', 'Color', 'Size']
    data_features = df[features]
    ```
-- Seleksi fitur dilakukan untuk menentukan atribut yang paling relevan dalam menghasilkan rekomendasi yang bermakna. Fitur Product Name, Brand, Category, Color, dan Size dipilih karena mewakili karakteristik utama produk fashion yang memengaruhi preferensi pengguna.
+- Seleksi fitur dilakukan untuk menentukan atribut yang paling relevan dalam menghasilkan rekomendasi yang baik dengan dpilih fitur Product Name, Brand, Category, Color, dan Size dipilih karena mewakili karakteristik utama produk fashion yang memengaruhi preferensi pengguna.
 
 2. **Encoding**
    ```
