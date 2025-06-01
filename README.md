@@ -23,13 +23,13 @@ Refrensi:
    2. Membangun sistem rekomendasi berbasis konten (Content-Based Filtering) yang menyarankan produk serupa berdasarkan fitur-fitur produk dalam dataset.
 
 ### Solution Approach
-1. Visualization
+1. **Visualization**
 
    - Mengeksplorasi Category dan Rating untuk mengidentifikasi preferensi pengguna terhadap jenis fashion tertentu.
 
    - Menggunakan visualisasi seperti bar chart dan boxplot untuk menunjukkan distribusi rating per kategori.
 
-2. Content-Based Filtering (CBF)
+2. **Content-Based Filtering (CBF)**
 
    - Menggunakan atribut produk seperti Product Name, Brand, Category, Color, dan Size untuk membangun profil produk.
 
@@ -63,7 +63,7 @@ Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Produ
 - Tidak terdapat data yang duplikat.
 
 ### Eksploratory Data Analyst
-1. Distribusi Variabel Kategorikal
+1. **Distribusi Variabel Kategorikal**
 
 ![Distribusi Variabel Kategorikal](https://github.com/user-attachments/assets/285e112a-945c-4be8-881e-bdda49f0260a)
 
@@ -79,7 +79,7 @@ Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Produ
 
 - `Product Name` : Produk Jeans dan Shoes paling tinggi, sementara Sweater memiliki jumlah paling sedikit.
 
-2. Distribusi Rating per Kategori
+2. **Distribusi Rating per Kategori**
 
 ![Distribusi Rating per Kategori](https://github.com/user-attachments/assets/df4111d2-a6a9-4f0a-b2ff-51bf9c1b2ec1)
 
@@ -95,7 +95,7 @@ Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Produ
 
 - IQR terlihat cukup lebar di semua kategori, menunjukkan keragaman penilaian pengguna cukup besar.
 
-3. Rata-rata Rating per Kategori
+3. **Rata-rata Rating per Kategori**
 
 ![Rata-rata Rating per Kategori](https://github.com/user-attachments/assets/d2b51dda-c5a9-4eb7-a1f2-75de207dc899)
 
@@ -116,7 +116,7 @@ Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Produ
    Dengan rata-rata rating sedikit di bawah 3.0, Men's Fashion tampaknya memiliki performa 
    penilaian pengguna yang sedikit lebih rendah dibandingkan dua kategori lainnya.
 
-4. Distribusi Variabel Numerik
+4. **Distribusi Variabel Numerik**
 
 ![Distribusi Variabel Numerik](https://github.com/user-attachments/assets/a851bc49-6c5a-4fce-a2e0-c6d8d86b2729)
 
@@ -129,14 +129,14 @@ Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Produ
 ## Data Preparation
 Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan pengangan rating dengan nilai 0, pengangan missing value, menghapus data duplikat, dan menangani outlier, sehingga hanya perlu melakukan tahap sebagai berikut:
 
-1. Seleksi Fitur
+1. **Seleksi Fitur**
    ```
    features = ['Product Name', 'Brand', 'Category', 'Color', 'Size']
    data_features = df[features]
    ```
 - Seleksi fitur dilakukan untuk menentukan atribut yang paling relevan dalam menghasilkan rekomendasi yang bermakna. Fitur Product Name, Brand, Category, Color, dan Size dipilih karena mewakili karakteristik utama produk fashion yang memengaruhi preferensi pengguna.
 
-2. Encoding
+2. **Encoding**
    ```
    encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
    encoded_features = encoder.fit_transform(data_features)
@@ -144,7 +144,7 @@ Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan 
    ```
 - Fitur seperti Product Name, Brand, Category, Color, dan Size bersifat kategorikal, sedangkan cosine similarity memerlukan data dalam format numerik. Jadi, digunakan One-Hot Encoding untuk mengubah setiap kategori menjadi vektor biner, memungkinkan perhitungan kesamaan matematis antar produk dan sistem dapat mengukur jarak atau kesamaan antar produk berdasarkan atribut ini.
 
-3. Penggabungan Data
+3. **Penggabungan Data**
    ```
    encoded_df = pd.concat([encoded_df, df[['Product ID', 'Product Name', 'Brand', 'Category', 
    'Color', 'Size', 'Rating', 'Price']]], axis=1)
@@ -160,7 +160,7 @@ Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan 
 Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Based Filtering dan menggunakan dua algoritma , yaitu Cosine Similarity dan Euclidean Distance. Kedua algoritma ini menggunakan representasi vektor hasil encoding atribut produk sebagai dasar perhitungan kemiripan antar item.
 
 ### Solusi 1: Cosine Similarity
-- Perhitungan Cosine Similarity:
+- **Perhitungan Cosine Similarity:**
 
    Cosine Similarity menghitung kesamaan antara dua vektor berdasarkan sudut di antara keduanya. Vektor dibentuk dari atribut produk yang telah diubah menjadi 
    representasi numerik melalui encoding.
@@ -171,7 +171,7 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
    
    Nilai cosine similarity berkisar antara 0 hingga 1. Semakin mendekati 1, semakin mirip dua vektor tersebut.
 
- - Fungsi Rekomendasi
+ - **Fungsi Rekomendasi**
    Langkah-langkah:
    
    - Mengencode data input menggunakan encoder yang sama.
@@ -183,7 +183,7 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
    - Mengambil Top-N produk paling mirip sebagai hasil rekomendasi. 
 
 ### Solusi 2: Euclidean Distance
-- Perhitungan Euclidean Distance
+- **Perhitungan Euclidean Distance**
   Euclidean Distance menghitung jarak antar dua vektor dalam ruang berdimensi banyak:
   
   ![image](https://github.com/user-attachments/assets/1b63fdb4-559d-43de-aa96-2bcacbb10e98)
@@ -194,7 +194,7 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
 
   Nilai similarity akan semakin besar jika jarak semakin kecil, dan sebaliknya.
 
-- Fungsi Rekomendasi
+- **Fungsi Rekomendasi**
   Langkah-langkah fungsi:
    
   - Melakukan encoding terhadap atribut input.
@@ -228,24 +228,24 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
 ## Evaluation
 Sistem rekomendasi ini menggunakan dua metrik utama untuk mengukur kualitas rekomendasi, yaitu Precision@K dan Recall@K. Metrik ini sesuai dengan tujuan sistem yang memberikan rekomendasi Top-N produk berdasarkan kesamaan atribut.
 
-1. Precision@K
+1. **Precision@K**
 
-   Definisi:
+   **Definisi:**
 
    Precision@K mengukur seberapa tepat rekomendasi yang diberikan dalam daftar Top-K item. Artinya, dari K item yang direkomendasikan, berapa proporsi yang benar- 
    benar relevan dengan preferensi pengguna.
 
-   Formula:
+   **Formula:**
    
    `Precision@K = Jumlah item relevan yang direkomendasikan / K`
 
-   Keterangan:
+   **Keterangan:**
 
    - K adalah jumlah item yang direkomendasikan (misalnya 5 jika menggunakan Top-5).
    
    - Item relevan adalah produk yang sesuai dengan preferensi pengguna berdasarkan atribut atau skor kemiripan yang melewati threshold tertentu.
 
-   Cara Kerja:
+   **Cara Kerja:**
 
    - Sistem memilih K item terbaik (misalnya K=5) berdasarkan skor kemiripan (similarity score) atau jarak (distance).
 
@@ -253,24 +253,24 @@ Sistem rekomendasi ini menggunakan dua metrik utama untuk mengukur kualitas reko
 
    - Precision tinggi berarti rekomendasi yang diberikan mayoritas relevan, sehingga pengguna mendapatkan rekomendasi berkualitas dan tidak “banyak sampah”.
 
-2. Recall@K
+2. **Recall@K**
    
-   Definisi:
+   **Definisi:**
    
    Recall@K mengukur seberapa lengkap rekomendasi yang diberikan dalam menemukan semua item relevan yang tersedia di dataset. Artinya, dari semua item relevan 
    yang ada, berapa persen yang berhasil direkomendasikan dalam Top-K.
    
-   Formula:
+   **Formula:**
    
    `Recall@K= Jumlah item relevan yang direkomendasikan / Jumlah total item relevan`
    
-   Keterangan:
+   **Keterangan:**
 
    - Jumlah total item relevan adalah semua produk yang sesuai dengan preferensi pengguna dalam keseluruhan dataset.
 
    - Jumlah item relevan yang direkomendasikan adalah produk relevan yang berhasil dimunculkan dalam rekomendasi Top-K.
    
-   Cara Kerja:
+   **Cara Kerja:**
 
    - Sistem merekomendasikan K item teratas.
 
@@ -282,7 +282,7 @@ Sistem rekomendasi ini menggunakan dua metrik utama untuk mengukur kualitas reko
 ### Hasil Evaluasi
 Dengan input Shoes, Zara, Men's Fashion, White, S sebagai testnya.
 
-1. Cosine Similarty
+1. **Cosine Similarty**
    | Product ID | Product Name | Brand | Category      | Color | Size | Rating | Price | Similarity Score |
    | ---------- | ------------ | ----- | ------------- | ----- | ---- | ------ | ----- | ---------------- |
    | 4          | Shoes        | Zara  | Men's Fashion | White | S    | 1.0495 | 23    | 1.0              |
@@ -295,7 +295,7 @@ Dengan input Shoes, Zara, Men's Fashion, White, S sebagai testnya.
    - Recall@5: 1.00
    - Total Item Relevan: 4
 
-2. Ecludean Distances
+2. **Ecludean Distances**
    | Product ID | Product Name | Brand  | Category        | Color  | Size | Rating | Price | Similarity Score |
    | ---------- | ------------ | ------ | --------------- | ------ | ---- | ------ | ----- | ---------------- |
    | 3          | Dress        | Adidas | Women's Fashion | Yellow | XL   | 3.3379 | 44    | 1.0              |
