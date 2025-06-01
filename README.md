@@ -280,6 +280,8 @@ Sistem rekomendasi ini menggunakan dua metrik utama untuk mengukur kualitas reko
    - Recall tinggi berarti sistem tidak melewatkan banyak item relevan, sehingga pengguna mendapat rekomendasi yang lebih lengkap.
 
 ### Hasil Evaluasi
+Dengan input Shoes, Zara, Men's Fashion, White, S sebagai testnya.
+
 1. Cosine Similarty
    | Product ID | Product Name | Brand | Category      | Color | Size | Rating | Price | Similarity Score |
    | ---------- | ------------ | ----- | ------------- | ----- | ---- | ------ | ----- | ---------------- |
