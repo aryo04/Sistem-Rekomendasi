@@ -174,13 +174,13 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
  - Fungsi Rekomendasi
    Langkah-langkah:
    
-   1. Mengencode data input menggunakan encoder yang sama.
+   - Mengencode data input menggunakan encoder yang sama.
    
-   2. Menghitung nilai cosine similarity antara input dan seluruh data.
+   - Menghitung nilai cosine similarity antara input dan seluruh data.
    
-   3. Mengurutkan skor dari yang tertinggi.
+   - Mengurutkan skor dari yang tertinggi.
    
-   4. Mengambil Top-N produk paling mirip sebagai hasil rekomendasi. 
+   - Mengambil Top-N produk paling mirip sebagai hasil rekomendasi. 
 
 ### Solusi 2: Euclidean Distance
 - Perhitungan Euclidean Distance
@@ -197,15 +197,15 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
 - Fungsi Rekomendasi
   Langkah-langkah fungsi:
    
-  1. Melakukan encoding terhadap atribut input.
+  - Melakukan encoding terhadap atribut input.
    
-  2. Menghitung jarak Euclidean antara input dengan semua produk dalam dataset.
+  - Menghitung jarak Euclidean antara input dengan semua produk dalam dataset.
    
-  3. Mengubah hasil jarak menjadi skor similarity.
+  - Mengubah hasil jarak menjadi skor similarity.
    
-  4. Mengurutkan hasil berdasarkan skor tertinggi.
+  - Mengurutkan hasil berdasarkan skor tertinggi.
    
-  5. Mengambil Top-N produk sebagai hasil rekomendasi.
+  - Mengambil Top-N produk sebagai hasil rekomendasi.
 
 ### Kelebihan dan Kekurangan
 
