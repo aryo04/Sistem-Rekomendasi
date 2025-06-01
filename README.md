@@ -219,11 +219,11 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
 ### Contoh Output Top-5 Recommendation   
 - Rekomendasi Cosine Similarity dengan input Shoes, Zara, Men's Fashion, White, S
   
-![image](https://github.com/user-attachments/assets/0c7ae6db-e575-41da-bec5-af75a40fca23)
+  ![image](https://github.com/user-attachments/assets/0c7ae6db-e575-41da-bec5-af75a40fca23)
 
 - Rekomendasi Euclidean Distance dengan input Dress, Adidas, Women's Fashion, Yellow, XL
 
-![image](https://github.com/user-attachments/assets/cf83070a-2b2e-4e07-8980-cfcf8b50185f)
+  ![image](https://github.com/user-attachments/assets/cf83070a-2b2e-4e07-8980-cfcf8b50185f)
 
 ## Evaluation
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
