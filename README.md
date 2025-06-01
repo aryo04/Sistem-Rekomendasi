@@ -167,6 +167,7 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
    Nilai cosine similarity berkisar antara 0 hingga 1. Semakin mendekati 1, semakin mirip dua vektor tersebut.
 
  - **Fungsi Rekomendasi**
+   
    Langkah-langkah:
    
    - Mengencode data input menggunakan encoder yang sama.
@@ -190,6 +191,7 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
   Nilai similarity akan semakin besar jika jarak semakin kecil, dan sebaliknya.
 
 - **Fungsi Rekomendasi**
+  
   Langkah-langkah fungsi:
    
   - Melakukan encoding terhadap atribut input.
