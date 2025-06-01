@@ -233,8 +233,11 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
 
-**---Ini adalah bagian akhir laporan---**
+### Kesimpulan Evaluasi
+- Pada test case ini, kedua metode Cosine Similarity dan Euclidean Distance menghasilkan nilai Precision@5 dan Recall@5 yang sama, yaitu precision 0.80 dan recall 1.00.
 
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+- Artinya, dari 5 produk yang direkomendasikan, 4 di antaranya relevan dengan preferensi pengguna (product name 'Shoes', brand 'Zara', kategori "Men's Fashion", warna 'White', dan ukuran 'S').
+
+- Sistem berhasil merekomendasikan semua produk relevan yang tersedia (recall 1.00), sekaligus menjaga ketepatan rekomendasi cukup tinggi (precision 0.80).
+
+- Perbedaan skor similarity pada item terakhir di Euclidean Distance menunjukkan ada perbedaan tingkat kemiripan, namun tidak mempengaruhi metrik precision dan recall dalam kasus ini.
