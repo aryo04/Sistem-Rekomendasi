@@ -37,23 +37,120 @@ Refrensi:
 
    - Menggunakan cosine similarity untuk menemukan produk serupa dan memberikan rekomendasi.
 
-
-  
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Product](https://www.kaggle.com/datasets/bhanupratapbiswas/fashion-products/data)' yang dibuat oleh Bhanupratap Biswas mengenai berbagai produk fashion dari beberapa merek dan kategori dan dataset ini terdiri dari 1000 baris dan 9 kolom.
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+### Variabel pada Dataset
 
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+| **Variabel** | **Deskripsi**                                                  | **Tipe Data**     |
+| ------------ | -------------------------------------------------------------- | ----------------- |
+| User ID      | Identifikasi unik untuk pengguna yang memberikan peringkat     | Numerik (int)     |
+| Product ID   | Identifikasi unik untuk setiap produk fashion                  | Numerik (int)     |
+| Product Name | Nama produk (T-shirt, Dress, Shoes, Jeans, Sweater)            | Kategorikal       |
+| Brand        | Merek produk (Adidas, Nike, Zara, H\&M, Gucci)                 | Kategorikal       |
+| Category     | Kategori produk (Men's Fashion, Women's Fashion, Kids')        | Kategorikal       |
+| Price        | Harga produk                                                   | Numerik (int)     |
+| Rating       | Peringkat produk yang diberikan pengguna (skala 1 sampai 5)    | Numerik (float)   |
+| Color        | Warna produk (Black, White, Blue, Red, Green)                  | Kategorikal       |
+| Size         | Ukuran produk (S, M, L, XL)                                    | Kategorikal       |
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
+### Kondisi Awal Dataset
+- Terdiri dari 1000 baris dan 9 kolom.
+- Tipe data dalam dataset terdiri dari 5 kategorikal dan 4 numerik.
+- Tidak terdapat outlier.
+- Tidak terdapat rating dengna nilai 0.
+- Tidak terdapat missing value.
+- Tidak terdapat data yang duplikat.
+
+### Eksploratory Data Analyst
+1. Distribusi Variabel Kategorikal
+
+![Distribusi Variabel Kategorikal](https://github.com/user-attachments/assets/285e112a-945c-4be8-881e-bdda49f0260a)
+
+**Insight** :
+
+- `Category` : Tiga kategori fashion (Men’s, Women’s, Kid’s) memiliki distribusi yang cukup seimbang, namun Kid’s Fashion sedikit lebih tinggi.
+
+- `Brand` : Semua brand populer (Adidas, H&M, Zara, Gucci, Nike) memiliki jumlah produk yang hampir merata, dengan Nike sedikit lebih tinggi.
+
+- `Color` : Warna White paling sering muncul, diikuti oleh Yellow dan Blue. Warna Red paling sedikit.
+
+- `Size` : Distribusi merata dengan XL dan L sedikit lebih tinggi dibandingkan s dan m.
+
+- `Product Name` : Produk Jeans dan Shoes paling tinggi, sementara Sweater memiliki jumlah paling sedikit.
+
+2. Distribusi Rating per Kategori
+
+![Distribusi Rating per Kategori](https://github.com/user-attachments/assets/df4111d2-a6a9-4f0a-b2ff-51bf9c1b2ec1)
+
+**Insight** :
+
+- Ketiga kategori (`Men's Fashion, Women's Fashion, dan Kids Fashion`) menunjukkan distribusi rating yang serupa, dengan rentang rating dari 1 hingga 5.
+
+- Median rating dari ketiga kategori berada di sekitar 3, dengan:
+
+  * `Women's Fashion` dan `Kid's Fashion` memiliki median sedikit lebih tinggi dari `Men's Fashion`.
+
+  * Ini mengindikasikan bahwa produk di dua kategori tersebut cenderung mendapat penilaian lebih tinggi secara konsisten dibanding `Men's Fashion`.
+
+- IQR terlihat cukup lebar di semua kategori, menunjukkan keragaman penilaian pengguna cukup besar.
+
+3. Rata-rata Rating per Kategori
+
+![Rata-rata Rating per Kategori](https://github.com/user-attachments/assets/d2b51dda-c5a9-4eb7-a1f2-75de207dc899)
+
+**Insight** :
+
+- `Kids' Fashion` memiliki rata-rata rating tertinggi
+
+   Nilai rata-rata rating kategori ini sedikit di atas 3.0, menunjukkan bahwa secara umum, 
+   produk-produk Kids' Fashion lebih disukai oleh pelanggan dibanding dua kategori lainnya.
+
+- `Women's Fashion` berada di urutan kedua
+
+   Rata-rata rating-nya tepat di angka 3.0, menandakan kepuasan pelanggan yang cukup baik dan 
+   stabil.
+
+- `Men's Fashion` memiliki rata-rata rating terendah
+
+   Dengan rata-rata rating sedikit di bawah 3.0, Men's Fashion tampaknya memiliki performa 
+   penilaian pengguna yang sedikit lebih rendah dibandingkan dua kategori lainnya.
+
+4. Distribusi Variabel Numerik
+
+![Distribusi Variabel Numerik](https://github.com/user-attachments/assets/a851bc49-6c5a-4fce-a2e0-c6d8d86b2729)
+
+**Insight** :
+
+- Harga produk tersebar merata di rentang 10 hingga 100 dan distribusi harga cenderung datar, menunjukkan ketersediaan produk di berbagai level harga secara seimbang.
+
+- Rating tersebar dari 1 hingga 5, dengan puncak pada rating 3 dan Rrating 1 dan 5 juga cukup tinggi, menunjukkan pengalaman pengguna yang beragam—baik sangat puas maupun sangat tidak puas.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan pengangan rating dengan nilai 0, pengangan missing value, menghapus data duplikat, dan menangani outlier, sehingga hanya perlu melakukan tahap sebagai berikut:
+
+1. Seleksi Fitur
+   ```
+   features = ['Product Name', 'Brand', 'Category', 'Color', 'Size']
+   data_features = df[features]
+   ```
+- Seleksi fitur dilakukan untuk menentukan atribut yang paling relevan dalam menghasilkan rekomendasi yang bermakna. Fitur Product Name, Brand, Category, Color, dan Size dipilih karena mewakili karakteristik utama produk fashion yang memengaruhi preferensi pengguna.
+
+2. Encoding
+   ```
+   encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
+   encoded_features = encoder.fit_transform(data_features)
+   encoded_df = pd.DataFrame(encoded_features, columns=encoder.get_feature_names_out(features))
+   ```
+- Fitur seperti Product Name, Brand, Category, Color, dan Size bersifat kategorikal, sedangkan cosine similarity memerlukan data dalam format numerik. Jadi, digunakan One-Hot Encoding untuk mengubah setiap kategori menjadi vektor biner, memungkinkan perhitungan kesamaan matematis antar produk dan sistem dapat mengukur jarak atau kesamaan antar produk berdasarkan atribut ini.
+
+3. Penggabungan Data
+   ```
+   encoded_df = pd.concat([encoded_df, df[['Product ID', 'Product Name', 'Brand', 'Category', 
+   'Color', 'Size', 'Rating', 'Price']]], axis=1)
+   ```
+- Setelah encoding, DataFrame hanya berisi vektor biner yang sulit diinterpretasikan tanpa konteks asli. Menambahkan kolom referensi seperti Product ID, Product Name, Brand, Category, Color, Size, Rating, dan Price memungkinkan pengguna untuk memahami produk yang direkomendasikan dengan jelas.
+
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
