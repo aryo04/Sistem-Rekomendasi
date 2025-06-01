@@ -124,7 +124,7 @@ Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Produ
 
 - Harga produk tersebar merata di rentang 10 hingga 100 dan distribusi harga cenderung datar, menunjukkan ketersediaan produk di berbagai level harga secara seimbang.
 
-- Rating tersebar dari 1 hingga 5, dengan puncak pada rating 3 dan rating 1 dan 5 juga cukup tinggi, menunjukkan pengalaman pengguna yang beragam—baik sangat puas maupun sangat tidak puas.
+- Rating tersebar dari 1 hingga 5, dengan puncak pada rating 3 dan rating 1 dan 5 juga cukup tinggi, menunjukkan pengalaman pengguna yang beragam baik sangat puas maupun sangat tidak puas.
 
 ## Data Preparation
 Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan pengangan rating dengan nilai 0, pengangan missing value, menghapus data duplikat, dan menangani outlier, sehingga hanya perlu melakukan tahap sebagai berikut:
