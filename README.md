@@ -134,7 +134,7 @@ Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan 
    features = ['Product Name', 'Brand', 'Category', 'Color', 'Size']
    data_features = df[features]
    ```
-- Seleksi fitur dilakukan untuk menentukan atribut yang paling relevan dalam menghasilkan rekomendasi yang baik dengan dpilih fitur Product Name, Brand, Category, Color, dan Size dipilih karena mewakili karakteristik utama produk fashion yang memengaruhi preferensi pengguna.
+- Seleksi fitur dilakukan untuk menentukan atribut yang paling relevan dalam menghasilkan rekomendasi yang baik dengan dpilih fitur Product Name, Brand, Category, Color, dan Size  karena mewakili karakteristik utama produk fashion yang memengaruhi preferensi pengguna.
 
 2. **Encoding**
    ```
@@ -142,7 +142,7 @@ Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan 
    encoded_features = encoder.fit_transform(data_features)
    encoded_df = pd.DataFrame(encoded_features, columns=encoder.get_feature_names_out(features))
    ```
-- Fitur seperti Product Name, Brand, Category, Color, dan Size bersifat kategorikal, sedangkan cosine similarity memerlukan data dalam format numerik. Jadi, digunakan One-Hot Encoding untuk mengubah setiap kategori menjadi vektor biner, memungkinkan perhitungan kesamaan matematis antar produk dan sistem dapat mengukur jarak atau kesamaan antar produk berdasarkan atribut ini.
+- Fitur seperti Product Name, Brand, Category, Color, dan Size bersifat kategorikal, sedangkan cosine similarity dan ecludian distance memerlukan data dalam format numerik. Jadi, digunakan One-Hot Encoding untuk mengubah setiap kategori menjadi vektor biner, memungkinkan perhitungan kesamaan matematis antar produk dan sistem dapat mengukur jarak atau kesamaan antar produk berdasarkan atribut ini.
 
 3. **Penggabungan Data**
    ```
@@ -150,11 +150,6 @@ Berdasarkan kondisi awal dataset, tidak diperlukan lagi tahapan untuk melakukan 
    'Color', 'Size', 'Rating', 'Price']]], axis=1)
    ```
 - Setelah encoding, DataFrame hanya berisi vektor biner yang sulit diinterpretasikan tanpa konteks asli. Menambahkan kolom referensi seperti Product ID, Product Name, Brand, Category, Color, Size, Rating, dan Price memungkinkan pengguna untuk memahami produk yang direkomendasikan dengan jelas.
-
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
 
 ## Modeling
 Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Based Filtering dan menggunakan dua algoritma , yaitu Cosine Similarity dan Euclidean Distance. Kedua algoritma ini menggunakan representasi vektor hasil encoding atribut produk sebagai dasar perhitungan kemiripan antar item.
