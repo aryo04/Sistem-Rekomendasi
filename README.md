@@ -35,7 +35,7 @@ Refrensi:
 
    - Menggunakan teknik One-Hot Encoding  untuk mengubah produk menjadi representasi vektor.
 
-   - Menggunakan cosine similarity untuk menemukan produk serupa dan memberikan rekomendasi.
+   - Menggunakan Cosine Similarity dan Euclidean Distance untuk menemukan produk serupa dan memberikan rekomendasi.
 
 ## Data Understanding
 Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Product](https://www.kaggle.com/datasets/bhanupratapbiswas/fashion-products/data)' yang dibuat oleh Bhanupratap Biswas mengenai berbagai produk fashion dari beberapa merek dan kategori dan dataset ini terdiri dari 1000 baris dan 9 kolom.
