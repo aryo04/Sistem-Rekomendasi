@@ -13,12 +13,12 @@ Refrensi:
 ## Business Understanding
 
 ### Problem Statements
-   1. Bagaimana distribusi Rating produk berdasarkan Category dalam dataset ini?
+   1. Bagaimana distribusi Rating produk berdasarkan setiap Category?
 
-   2. Bagaimana cara memberikan rekomendasi produk fashion yang relevan berdasarkan atribut produk seperti Brand, Category, Color, dan Size?
+   2. Bagaimana cara memberikan rekomendasi produk fashion yang relevan berdasarkan atribut produk seperti Product Name, Brand, Category, Color, dan Size?
 
 ### Goals
-   1. Mengetahui kategori fashion mana yang mendapatkan Rating tertinggi dari pengguna.
+   1. Menganalisis distribusi rating produk berdasarkan setiap kategori untuk mengetahui kategori dengan rating tertinggi.
 
    2. Membangun sistem rekomendasi berbasis konten (Content-Based Filtering) yang menyarankan produk serupa berdasarkan fitur-fitur produk dalam dataset.
 
