@@ -293,13 +293,13 @@ Dengan input Shoes, Zara, Men's Fashion, White, S sebagai testnya.
    - Total Item Relevan: 4
 
 2. **Ecludean Distances**
-   | Product ID | Product Name | Brand  | Category        | Color  | Size | Rating | Price | Similarity Score |
-   | ---------- | ------------ | ------ | --------------- | ------ | ---- | ------ | ----- | ---------------- |
-   | 3          | Dress        | Adidas | Women's Fashion | Yellow | XL   | 3.3379 | 44    | 1.0              |
-   | 214        | Dress        | Adidas | Women's Fashion | Yellow | XL   | 1.7939 | 98    | 1.0              |
-   | 386        | Dress        | Adidas | Women's Fashion | Yellow | XL   | 3.5784 | 17    | 1.0              |
-   | 51         | Jeans        | Adidas | Women's Fashion | Yellow | XL   | 3.8430 | 67    | 0.414            |
-   | 157        | Dress        | Adidas | Women's Fashion | Yellow | S    | 3.9818 | 67    | 0.414            |
+   | Product ID | Product Name | Brand | Category      | Color | Size | Rating | Price | Similarity Score |
+   | ---------- | ------------ | ----- | ------------- | ----- | ---- | ------ | ----- | ---------------- |
+   | 4          | Shoes        | Zara  | Men's Fashion | White | S    | 1.0495 | 23    | 1.000000         |
+   | 236        | Shoes        | Zara  | Men's Fashion | White | S    | 1.7183 | 44    | 1.000000         |
+   | 668        | Shoes        | Zara  | Men's Fashion | White | S    | 1.8423 | 11    | 1.000000         |
+   | 714        | Shoes        | Zara  | Men's Fashion | White | S    | 2.4915 | 35    | 1.000000         |
+   | 93         | Shoes        | Nike  | Men's Fashion | White | S    | 4.9281 | 70    | 0.414214         |
 
    - Precision@5: 0.60
    - Recall@5: 1.00
