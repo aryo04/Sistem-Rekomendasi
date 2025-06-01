@@ -58,7 +58,7 @@ Dataset yang digunakan berasal dari platform Kaggle dengan judul '[Fashion Produ
 - Terdiri dari 1000 baris dan 9 kolom.
 - Tipe data dalam dataset terdiri dari 5 kategorikal dan 4 numerik.
 - Tidak terdapat outlier.
-- Tidak terdapat rating dengna nilai 0.
+- Tidak terdapat rating dengan nilai 0.
 - Tidak terdapat missing value.
 - Tidak terdapat data yang duplikat.
 
