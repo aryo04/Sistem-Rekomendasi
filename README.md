@@ -301,14 +301,14 @@ Dengan input Shoes, Zara, Men's Fashion, White, S sebagai testnya.
    | 714        | Shoes        | Zara  | Men's Fashion | White | S    | 2.4915 | 35    | 1.000000         |
    | 93         | Shoes        | Nike  | Men's Fashion | White | S    | 4.9281 | 70    | 0.414214         |
 
-   - Precision@5: 0.60
+   - Precision@5: 0.80
    - Recall@5: 1.00
-   - Total Item Relevan: 3
+   - Total Item Relevan: 4
    
 ### Interpretasi Hasil Evaluasi
 - Pada test case ini, kedua metode Cosine Similarity dan Euclidean Distance menghasilkan nilai Precision@5 dan Recall@5 yang sama, yaitu precision 0.80 dan recall 1.00.
 
-- Artinya, dari 5 produk yang direkomendasikan, 4 di antaranya relevan dengan preferensi pengguna (product name 'Shoes', brand 'Zara', kategori "Men's Fashion", warna 'White', dan ukuran 'S').
+- Artinya, dari 5 produk yang direkomendasikan, 4 diantaranya relevan dengan preferensi pengguna (product name 'Shoes', brand 'Zara', kategori "Men's Fashion", warna 'White', dan ukuran 'S').
 
 - Sistem berhasil merekomendasikan semua produk relevan yang tersedia (recall 1.00), sekaligus menjaga ketepatan rekomendasi cukup tinggi (precision 0.80).
 
