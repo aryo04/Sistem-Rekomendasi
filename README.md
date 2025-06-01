@@ -226,14 +226,87 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
   ![image](https://github.com/user-attachments/assets/c010101a-30db-44c9-9dac-5407a69f9049)
 
 ## Evaluation
-Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
+Sistem rekomendasi ini menggunakan dua metrik utama untuk mengukur kualitas rekomendasi, yaitu Precision@K dan Recall@K. Metrik ini sesuai dengan tujuan sistem yang memberikan rekomendasi Top-N produk berdasarkan kesamaan atribut.
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+1. Precision@K
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+   Definisi:
 
-### Kesimpulan Evaluasi
+   Precision@K mengukur seberapa tepat rekomendasi yang diberikan dalam daftar Top-K item. Artinya, dari K item yang direkomendasikan, berapa proporsi yang benar- 
+   benar relevan dengan preferensi pengguna.
+
+   Formula:
+   
+   `Precision@K = Jumlah item relevan yang direkomendasikan / K`
+
+   Keterangan:
+
+   - K adalah jumlah item yang direkomendasikan (misalnya 5 jika menggunakan Top-5).
+   
+   - Item relevan adalah produk yang sesuai dengan preferensi pengguna berdasarkan atribut atau skor kemiripan yang melewati threshold tertentu.
+
+   Cara Kerja:
+
+   - Sistem memilih K item terbaik (misalnya K=5) berdasarkan skor kemiripan (similarity score) atau jarak (distance).
+
+   - Precision dihitung dengan menghitung berapa banyak dari K item tersebut yang relevan (sesuai preferensi pengguna).
+
+   - Precision tinggi berarti rekomendasi yang diberikan mayoritas relevan, sehingga pengguna mendapatkan rekomendasi berkualitas dan tidak “banyak sampah”.
+
+2. Recall@K
+   
+   Definisi:
+   
+   Recall@K mengukur seberapa lengkap rekomendasi yang diberikan dalam menemukan semua item relevan yang tersedia di dataset. Artinya, dari semua item relevan 
+   yang ada, berapa persen yang berhasil direkomendasikan dalam Top-K.
+   
+   Formula:
+   
+   `Recall@K= Jumlah item relevan yang direkomendasikan / Jumlah total item relevan`
+   
+   Keterangan:
+
+   - Jumlah total item relevan adalah semua produk yang sesuai dengan preferensi pengguna dalam keseluruhan dataset.
+
+   - Jumlah item relevan yang direkomendasikan adalah produk relevan yang berhasil dimunculkan dalam rekomendasi Top-K.
+   
+   Cara Kerja:
+
+   - Sistem merekomendasikan K item teratas.
+
+   - Recall dihitung dengan membandingkan berapa banyak dari item relevan yang berhasil muncul di dalam rekomendasi tersebut dibandingkan total item relevan yang 
+     sebenarnya ada.
+
+   - Recall tinggi berarti sistem tidak melewatkan banyak item relevan, sehingga pengguna mendapat rekomendasi yang lebih lengkap.
+
+### Hasil Evaluasi
+1. Cosine Similarty
+   | Product ID | Product Name | Brand | Category      | Color | Size | Rating | Price | Similarity Score |
+   | ---------- | ------------ | ----- | ------------- | ----- | ---- | ------ | ----- | ---------------- |
+   | 4          | Shoes        | Zara  | Men's Fashion | White | S    | 1.0495 | 23    | 1.0              |
+   | 236        | Shoes        | Zara  | Men's Fashion | White | S    | 1.7183 | 44    | 1.0              |
+   | 668        | Shoes        | Zara  | Men's Fashion | White | S    | 1.8423 | 11    | 1.0              |
+   | 714        | Shoes        | Zara  | Men's Fashion | White | S    | 2.4915 | 35    | 1.0              |
+   | 93         | Shoes        | Nike  | Men's Fashion | White | S    | 4.9281 | 70    | 0.8              |
+
+   - Precision@5: 0.80
+   - Recall@5: 1.00
+   - Total Item Relevan: 4
+
+2. Ecludean Distances
+   | Product ID | Product Name | Brand  | Category        | Color  | Size | Rating | Price | Similarity Score |
+   | ---------- | ------------ | ------ | --------------- | ------ | ---- | ------ | ----- | ---------------- |
+   | 3          | Dress        | Adidas | Women's Fashion | Yellow | XL   | 3.3379 | 44    | 1.0              |
+   | 214        | Dress        | Adidas | Women's Fashion | Yellow | XL   | 1.7939 | 98    | 1.0              |
+   | 386        | Dress        | Adidas | Women's Fashion | Yellow | XL   | 3.5784 | 17    | 1.0              |
+   | 51         | Jeans        | Adidas | Women's Fashion | Yellow | XL   | 3.8430 | 67    | 0.414            |
+   | 157        | Dress        | Adidas | Women's Fashion | Yellow | S    | 3.9818 | 67    | 0.414            |
+
+   - Precision@5: 0.60
+   - Recall@5: 1.00
+   - Total Item Relevan: 3
+   
+### Interpretasi Hasil Evaluasi
 - Pada test case ini, kedua metode Cosine Similarity dan Euclidean Distance menghasilkan nilai Precision@5 dan Recall@5 yang sama, yaitu precision 0.80 dan recall 1.00.
 
 - Artinya, dari 5 produk yang direkomendasikan, 4 di antaranya relevan dengan preferensi pengguna (product name 'Shoes', brand 'Zara', kategori "Men's Fashion", warna 'White', dan ukuran 'S').
