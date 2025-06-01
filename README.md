@@ -217,11 +217,11 @@ Dalam proyek ini, sistem rekomendasi dikembangkan dengan pendekatan Content Base
 |                    | - Cocok jika semua fitur dianggap memiliki kontribusi yang setara | - Bisa memberikan skor rendah meski atribut sebenarnya hampir sama |
 
 ### Contoh Output Top-5 Recommendation   
-- Rekomendasi dengan Cosine Similarity
+- Rekomendasi Cosine Similarity dengan input Shoes, Zara, Men's Fashion, White, S
   
 ![image](https://github.com/user-attachments/assets/0c7ae6db-e575-41da-bec5-af75a40fca23)
 
-- Rekomendasi dengan Euclidean Distance
+- Rekomendasi Euclidean Distance dengan input Dress, Adidas, Women's Fashion, Yellow, XL
 
 ![image](https://github.com/user-attachments/assets/cf83070a-2b2e-4e07-8980-cfcf8b50185f)
 
